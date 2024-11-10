@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Display</h2>
+<table>
+    {% if obj %}
+    <tr>
+        <th>EmpName</th>
+        <th>EmpNo</th>
+        <th>Designation</th>
+        <th>Mob_no</th>
+    </tr>
+    {% for i in obj %}
+    <tr>
+        <td>{{i.emp_name}}</td>
+        <td>{{i.emp_no}}</td>
+        <td>{{i.emp_design}}</td>
+        <td>{{i.mob_no}}</td>
+        <td><a href="/update/{{i.emp_no}}/">Update</a></td>
+        <td><a href="/delete/{{i.emp_no}}/">Delete</a></td>
+    </tr>
+{% endfor %}
+{%else%}
+<h2>Empty</h2>
+{% endif %}
+
+</table>
+{%endblock%}

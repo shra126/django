@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content%}
+<h2>Display</h2>
+<table>
+{% if ob %}
+<tr>
+<th>EmpName</th>
+<th>Emp Number</th>
+<th>Designation</th>
+<th>Mob_no</th>
+</tr>
+<tr>
+<td>{{ob.emp_name}}</td>
+<td>{{ob.emp_no}}</td>
+<td>{{ob.emp_design}}</td>
+<td>{{ob.mob_no}}</td>
+</tr>
+{% else %}
+<h3>NOT FOUND</h3>
+{% endif %}
+</table>
+{% endblock %}
